@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd client && npm install -g @angular/cli && npm install  && ng build -prod --aot=false && cd.. && node server.js",
-    "build": "cd client && ng build -prod --aot=false && cd.. && node server.js"
+    "start": "node server.js",
+    "postinstall": "cd client && ng build --aot -prod"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Dhiva03/faceApp#readme",
   "dependencies": {
+	"angular-cli": "1.0.0-beta.28.3",
     "express": "^4.15.4",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
