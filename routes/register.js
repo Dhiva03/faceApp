@@ -394,6 +394,8 @@ if (req.body.firstName == null || req.body.firstName == "" || req.body.lastName 
     res.json({success: false, message: 'Ensure that all information were provided'});
 } else {
     emp.save((err, data) =>{
+    	console.log(req.body.path);
+    	console.log(err);
         if (err) {
             res.json({success: false, message: 'employeeId already exists!!'});
         } else if(data){
