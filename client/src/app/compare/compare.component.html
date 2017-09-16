@@ -1,0 +1,40 @@
+<h3 align="center">Compare Data</h3>
+
+      
+<div class="col-md-5"> 
+<div class="form-group">
+    <label for="Upload">UploadIn</label> 
+<div class="input-group">
+   <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
+   <input class="form-control" type="file" ng2FileSelect [uploader]="uploaderIn" />  
+    </div> 
+      <div *ngFor="let item of uploaderIn.queue" >   
+        <button type="button" class="btn btn-success btn-xs"
+                                (click)="item.upload()" [disabled]="item.isSuccess">
+                            <span class="glyphicon glyphicon-upload"></span> Upload
+                        </button>
+   
+    </div>
+    </div>
+    </div>
+    <div class="col-md-5"> 
+<div class="form-group">
+    <label for="Upload">uploadOut</label>
+    
+<div class="input-group">
+   <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
+   <input class="form-control" type="file" ng2FileSelect [uploader]="uploaderOut" />  
+    </div> 
+      <div *ngFor="let item of uploaderOut.queue" >   
+        <button type="button" class="btn btn-success btn-xs"
+                                (click)="item.upload()" [disabled]="item.isSuccess">
+                            <span class="glyphicon glyphicon-upload"></span> Upload
+                        </button>
+   
+    </div>
+    </div>
+</div>
+
+
+   
+

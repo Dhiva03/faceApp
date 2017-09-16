@@ -1,0 +1,24 @@
+.frm
+{
+	    padding: 7px;
+}
+#file
+{
+	    width: 23%;
+}
+.takeimg
+{
+	    float: right;
+    margin-top: 1%;
+    margin-right: 32%;
+}
+.alert-success
+     {background-color: #fff !important;
+    border-color: #fff !important;
+        color:green !important;
+     }
+.alert-danger
+     { background-color: #fff !important;
+    border-color: #fff !important;
+        color:red !important;
+     }

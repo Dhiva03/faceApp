@@ -1,0 +1,75 @@
+<h3 align="center">Register here</h3>
+
+<form [formGroup]="form" (submit)="onRegisterSubmit()">
+
+<div class="form-group" >
+    <label for="employeeId">EmployeeId</label>
+    <div [ngClass]="{'has-error': (form.controls.employeeId.errors && form.controls.employeeId.dirty) || (!validateemployeeId && form.controls.employeeId.dirty), 'has-success': !form.controls.employeeId.errors && validateemployeeId}">
+    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-certificate"></i></span>
+    <input type="text" name="employeeId" class="form-control" formControlName="employeeId" placeholder="Enter employeeId" (change)="checkEmployeeId()" >
+    </div>
+     <ul class="help-block">
+        <li *ngIf="form.controls.employeeId.errors?.required && form.controls.employeeId.dirty">This field is required</li>
+        <li *ngIf="form.controls.employeeId.errors?.minlength && form.controls.employeeId.dirty || form.controls.employeeId.errors?.maxlength && form.controls.employeeId.dirty ">Minimum characters: 6, Maximum characters: 30</li>
+       <li *ngIf="form.controls.employeeId.errors?.validateid && form.controls.employeeId.dirty">employeeId must not have any special characters</li> 
+      <li *ngIf="employeeIdMessage" [ngClass]="employeeIdClass">{{ employeeIdMessage}}</li>
+      </ul>
+   </div>
+  </div>
+<div class="form-group" >
+    <label for="firstName">firstName</label>
+    <div [ngClass]="{'has-error': (form.controls.firstName.errors && form.controls.firstName.dirty) || ( !validatefirstName && form.controls.firstName.dirty), 'has-success': !form.controls.firstName.errors && validatefirstName}">
+    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text" name="firstName" class="form-control" formControlName="firstName" placeholder="Enter firstName" > </div>
+     <ul class="help-block">
+        <li *ngIf="form.controls.firstName.errors?.required && form.controls.firstName.dirty">This field is required</li>
+        <li *ngIf="form.controls.firstName.errors?.minlength && form.controls.firstName.dirty || form.controls.firstName.errors?.maxlength && form.controls.firstName.dirty ">Minimum characters: 3, Maximum characters: 15</li>
+        <li *ngIf="form.controls.firstName.errors?.validateUsername && form.controls.firstName.dirty">firstName must not have any special characters</li>
+        
+      </ul>
+   </div>
+  </div>
+  <div class="form-group" >
+    <label for="lastName">lastName</label>
+    <div [ngClass]="{'has-error': (form.controls.lastName.errors && form.controls.lastName.dirty) || (!!validatelastName && form.controls.lastName.dirty), 'has-success': !form.controls.lastName.errors && validatelastName}">
+    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text" name="lastName" class="form-control" formControlName="lastName" placeholder="Enter lastName" >
+    </div>
+     <ul class="help-block">
+        <li *ngIf="form.controls.lastName.errors?.required && form.controls.lastName.dirty">This field is required</li>
+        <li *ngIf="form.controls.lastName.errors?.minlength && form.controls.lastName.dirty || form.controls.lastName.errors?.maxlength && form.controls.lastName.dirty ">Minimum characters: 3, Maximum characters: 15</li>
+        <li *ngIf="form.controls.lastName.errors?.validatelastname && form.controls.lastName.dirty">lastName must not have any special characters</li>
+      </ul>
+   </div>
+  </div>
+  <div class="form-group">
+    <label for="salary">Salary</label>
+    <div [ngClass]="{'has-error': (form.controls.salary.errors && form.controls.salary.dirty) || (!validatesalary && form.controls.salary.dirty), 'has-success': !form.controls.salary.errors && validatesalary}">
+    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-euro"></i></span>
+    <input type="text" class="form-control" placeholder="Enter Salary" name="salary" formControlName="salary"  >
+    </div>
+    <ul class="help-block">
+        <li *ngIf="form.controls.salary.errors?.required && form.controls.salary.dirty">This field is required</li>
+        <li *ngIf="(form.controls.salary.errors?.minlength && form.controls.salary.dirty || form.controls.salary.errors?.maxlength && form.controls.salary.dirty ) && form.controls.salary.dirty">Minimum characters: 5, Maximum characters: 10</li>
+         <li *ngIf="form.controls.salary.errors?.validatesalary && form.controls.salary.dirty">Salary must not have any special characters,alphabets</li>
+      </ul>
+   </div>
+  </div>
+
+<div class="form-group">
+    <label for="Upload">Upload</label>
+    
+<div class="input-group">
+   <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
+   <input class="form-control" type="file" ng2FileSelect [uploader]="uploader" />  
+    </div> 
+      <div *ngFor="let item of uploader.queue" >   
+        <button type="button" class="btn btn-success btn-xs"
+                                (click)="item.upload()" [disabled]="item.isSuccess">
+                            <span class="glyphicon glyphicon-upload"></span> Upload
+                        </button>
+   
+    </div>
+    </div>
+  <button [disabled]="!form.valid" type="submit" class="btn btn-primary">Submit</button>
+</form>

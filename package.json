@@ -1,0 +1,43 @@
+{
+  "name": "faceapp",
+  "version": "1.0.0",
+  "description": "face App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "cd client && ng build -prod --aot=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhiva03/faceApp.git"
+  },
+  "author": "Dhivakaran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhiva03/faceApp/issues"
+  },
+  "homepage": "https://github.com/Dhiva03/faceApp#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "chokidar": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "fs": "0.0.1-security",
+    "get-closest": "0.0.4",
+    "jsonwebtoken": "^7.4.3",
+    "kairos-api": "^0.1.3",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.10",
+    "morgan": "^1.8.2",
+    "multer": "^1.3.0",
+    "ng2-webcam": "^1.2.4",
+    "nodemailer": "^4.1.0",
+    "path": "^0.12.7"
+  }
+}
