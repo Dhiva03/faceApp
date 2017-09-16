@@ -6,7 +6,7 @@ import { FileUploader} from 'ng2-file-upload';
 import {AuthService} from '../auth-service.service';
 import { Router } from '@angular/router';
 
-const URL = 'http://localhost:8080/register/api/reg';
+const URL = '/register/api/reg';
 
 @Component({
   selector: 'app-register',

@@ -4,8 +4,8 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import {ViewContainerRef} from '@angular/core';
 import {AuthService} from '../auth-service.service';
 
-const URLIN = '/api/in';
-const URLOUT = '/api/out';
+const URLIN = '/register/api/in';
+const URLOUT = '/register/api/out';
 @Component({
   selector: 'app-compare',
   templateUrl: './compare.component.html',
