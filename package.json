@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Dhiva03/faceApp#readme",
   "dependencies": {
-	  "angular-cli": "1.0.0-beta.28.3",
+	"@angular/cli": "1.2.7",
     "express": "^4.15.4",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
