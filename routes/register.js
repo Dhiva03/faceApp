@@ -281,7 +281,7 @@ const watcher1 = chokidar.watch('./out').on('add', (path) => {
 var storageIn = multer.diskStorage({
 	destination: function(req, file, callback) {
 		var In = 'in/';
-        mkdirp.sync(dest);
+        mkdirp.sync(In);
 		callback(null, In)	
 		},
 	filename: function(req, file, callback) {
@@ -293,7 +293,7 @@ var storageIn = multer.diskStorage({
 var storageUpload = multer.diskStorage({
 	destination: function(req, file, callback) {
 		var upload = 'upload/';
-        mkdirp.sync(dest);
+        mkdirp.sync(upload);
 		callback(null, upload)	
 		},
 	filename: function(req, file, callback) {
@@ -349,7 +349,7 @@ router.post('/api/in',function(req, res) {
 var storageOut = multer.diskStorage({
 	destination: function(req, file, callback) {
 		var out ='out/';
-        mkdirp.sync(dest);
+        mkdirp.sync(out);
 		callback(null, out)	
 		},
 	filename: function(req, file, callback) {
